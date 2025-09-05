@@ -1,0 +1,17 @@
+/* Products.css */
+.products-section {
+  width: 100%;
+}
+
+.products-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .products-card-container {
+    justify-content: center;
+  }
+}

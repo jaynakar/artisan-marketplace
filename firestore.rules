@@ -1,0 +1,53 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users can read/write their own user doc and cart
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      match /cart/{cartDoc=**} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Stores: everyone signed-in can read; only owner (uid==storeId) can write
+    match /stores/{storeId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == storeId;
+
+      // Products: readable by any signed-in user; write restricted to owner
+      match /products/{productId} {
+        allow read: if request.auth != null;
+
+        // Create requires owner asserting themselves
+        allow create: if request.auth != null
+                      && request.auth.uid == storeId
+                      && request.resource.data.ownerId == request.auth.uid;
+
+        // Updates/deletes allowed to store owner (or product owner by field)
+        allow update, delete: if request.auth != null
+                               && (request.auth.uid == storeId
+                                   || resource.data.ownerId == request.auth.uid);
+      }
+    }
+
+    // Top-level products collection (legacy/aggregated): readable by any authenticated user
+    match /products/{productId} {
+      allow read: if request.auth != null;
+    }
+
+    // Orders: buyer can read their own; seller (store owner) can read orders for their store
+    match /orders/{orderId} {
+      allow read: if request.auth != null && (
+        resource.data.userId == request.auth.uid ||
+        resource.data.storeId == request.auth.uid
+      );
+      allow create: if request.auth != null;
+      allow update: if request.auth != null && (
+        resource.data.userId == request.auth.uid ||
+        resource.data.storeId == request.auth.uid
+      );
+    }
+  }
+}
