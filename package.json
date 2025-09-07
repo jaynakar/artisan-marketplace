@@ -20,6 +20,7 @@
     "@mui/material": "^7.0.2",
     "date-fns": "^4.1.0",
     "firebase": "^11.10.0",
+    "form-data": "^4.0.4",
     "html2canvas": "^1.4.1",
     "jest": "^29.7.0",
     "jspdf": "^3.0.1",
