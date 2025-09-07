@@ -1,7 +1,7 @@
 // src/utils/cloudinaryUpload.js
 
-const CLOUD_NAME = 'dwm7urbfg'; // Replace with your Cloudinary cloud name
-const UPLOAD_PRESET = 'unsigned_ecommerce'; // Replace with your unsigned upload preset
+const CLOUD_NAME = import.meta?.env?.VITE_CLOUDINARY_CLOUD_NAME || 'dwm7urbfg';
+const UPLOAD_PRESET = import.meta?.env?.VITE_CLOUDINARY_UPLOAD_PRESET || 'unsigned_ecommerce';
 
 export async function uploadImageToCloudinary(file) {
   const url = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;

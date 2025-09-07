@@ -6,12 +6,12 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBoX2zfgLUXr-dg8URn0zqjTb6uH0M8JDU",
-  authDomain: "ecommerce-clone-ad49b.firebaseapp.com",
-  projectId: "ecommerce-clone-ad49b",
-  storageBucket: "ecommerce-clone-ad49b.appspot.com",
-  messagingSenderId: "243169722304",
-  appId: "1:243169722304:web:027cfad23ab13787301225"
+  apiKey: import.meta?.env?.VITE_FIREBASE_API_KEY || "AIzaSyBoX2zfgLUXr-dg8URn0zqjTb6uH0M8JDU",
+  authDomain: import.meta?.env?.VITE_FIREBASE_AUTH_DOMAIN || "ecommerce-clone-ad49b.firebaseapp.com",
+  projectId: import.meta?.env?.VITE_FIREBASE_PROJECT_ID || "ecommerce-clone-ad49b",
+  storageBucket: import.meta?.env?.VITE_FIREBASE_STORAGE_BUCKET || "ecommerce-clone-ad49b.appspot.com",
+  messagingSenderId: import.meta?.env?.VITE_FIREBASE_MESSAGING_SENDER_ID || "243169722304",
+  appId: import.meta?.env?.VITE_FIREBASE_APP_ID || "1:243169722304:web:027cfad23ab13787301225"
 };
 
 // const firebaseConfig = {
