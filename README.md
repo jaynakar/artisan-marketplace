@@ -19,6 +19,19 @@ Welcome to **Casa di Arté**, a sleek and fast frontend application built with *
 * 👤 Admin profile management
 * 📦 Order tracking
 
+## 🆕 Recent Updates
+
+* 🏪 Seller storefront pages at `/seller/:storeId` with seller info and products
+* 🧰 Seller tools: create store, manage store, and add products
+* 🛡️ Admin Dashboard to manage users and products (search, disable/delete)
+* 🧭 Buyer Home filters by category, price, color; search and reset controls
+* 💳 Payment flow with dedicated Payment and Payment Success pages
+* 💰 Credits widget on Buyer Home to load and track credits
+* 🖼️ Cloudinary image upload utility for product images
+* 🔒 Optional Firebase App Check (reCAPTCHA v3) via `VITE_RECAPTCHA_KEY`
+* 🧪 Dev helper: `window.runBackfill()` to backfill products in development
+* ✨ Animated landing page with scroll-in effects
+
 ---
 
 ## 📦 Tech Stack
