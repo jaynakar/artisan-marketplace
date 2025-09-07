@@ -5,14 +5,14 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collectionGroup, getDocs, doc, getDoc, setDoc } from 'firebase/firestore';
 
-// IMPORTANT: Uses the same client config as the web app. Adjust if needed.
+// IMPORTANT: Uses environment variables. Set these in your shell or .env file.
 const firebaseConfig = {
-  apiKey: "AIzaSyBoX2zfgLUXr-dg8URn0zqjTb6uH0M8JDU",
-  authDomain: "ecommerce-clone-ad49b.firebaseapp.com",
-  projectId: "ecommerce-clone-ad49b",
-  storageBucket: "ecommerce-clone-ad49b.appspot.com",
-  messagingSenderId: "243169722304",
-  appId: "1:243169722304:web:027cfad23ab13787301225"
+  apiKey: process.env.VITE_FIREBASE_API_KEY || process.env.FIREBASE_API_KEY,
+  authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN || process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.VITE_FIREBASE_PROJECT_ID || process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET || process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID || process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VITE_FIREBASE_APP_ID || process.env.FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
