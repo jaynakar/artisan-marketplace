@@ -2,7 +2,7 @@
 
 [![codecov](https://codecov.io/gh/TakudzwaT/artisanMarketPlace/graph/badge.svg?token=UKP63ICR92)](https://codecov.io/gh/TakudzwaT/artisanMarketPlace)
 
-🔗 **Live Demo:** [Click here](https://lemon-desert-03c525f10.6.azurestaticapps.net)
+🔗 **Live Demo:** [Click here](https://artisan-marketplace-one.vercel.app/)
 
 ---
 
