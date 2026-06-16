@@ -93,7 +93,7 @@ export default function LoginPage() {
         errorMessage = 'Authentication failed. Please try signing in again.';
       }
       
-      alert(errorMessage);
+      alert(`${error.code}: ${error.message}`);
       setIsLoading(false);
     }
   };

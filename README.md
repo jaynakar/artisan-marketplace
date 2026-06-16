@@ -90,4 +90,4 @@ yarn test
 
 If you have questions or run into issues, feel free to reach out. We're happy to help! 😊
 
-* **GitHub Repository:** [artisanMarketPlace](https://github.com/TakudzwaT/artisanMarketPlace)
+* **GitHub Repository:** [artisanMarketPlace](https://github.com/jaynakar/artisan-marketplace.git)
